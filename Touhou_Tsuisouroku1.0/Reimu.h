@@ -4,7 +4,7 @@
 class Reimu : public AbstractPlayer
 {
 public:
-	Reimu(int speed, int power, float range);
+	Reimu();
 	virtual ~Reimu() = default;
 	void draw() const override;
 	void move() override;

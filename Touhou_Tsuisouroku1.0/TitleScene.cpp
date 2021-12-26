@@ -14,13 +14,12 @@ void TitleScene::update()
 		//PlaySoundMem(Sound::getIns()->getTitleSound(), DX_PLAYTYPE_LOOP);
 		isSoundOn = true;
 	}
-	if (GamePad::getIns()->get(ePad::shot) == 1) {
-
+	if (GamePad::getIns()->get(ePad::shot) == 1 || Keyboard::getIns()->getPressingCount(KEY_INPUT_SPACE) == 1) {
 		goToMenuScene();
 	}
-	if (Keyboard::getIns()->getPressingCount(KEY_INPUT_SPACE) == 1) {
-
-		goToMenuScene();
+	if (Keyboard::getIns()->getPressingCount(KEY_INPUT_ESCAPE) == 1) {
+		SceneParameter parameter;
+		SceneChanged->onSceneChanged(Define::eScene::Quit, parameter, false);
 	}
 }
 

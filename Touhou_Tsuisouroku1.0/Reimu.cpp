@@ -1,9 +1,9 @@
 #include "Reimu.h"
 
-Reimu::Reimu(int speed, int power, float range)
+Reimu::Reimu()
 {
 	// speed = 6, power = 1, range = 10.5
-	setCharacter(speed, power, range);
+	setCharacter(6, 1, 0.5);
 }
 
 void Reimu::draw() const
@@ -97,10 +97,12 @@ void Reimu::move()
 	}
 
 	/* Limit the movable area for the player */
-	if (moveX + x < Define::IN_X + (w / 2)) { // if beyond the left side of game board
+	// if beyond the LEFT side of game board
+	if (moveX + x < Define::IN_X + (w / 2)) { 
 		x = (float)(Define::IN_X + (w / 2));
 	}
-	else if (moveX + x > Define::IN_X + Define::INNER_W - (w / 2)) { // if beyond the right side of game board
+	// if beyond the RIGHT side of game board
+	else if (moveX + x > Define::IN_X + Define::INNER_W - (w / 2)) {
 		x = (float)(Define::IN_X + Define::INNER_W - (w / 2));
 	}
 	else { // if within the game board

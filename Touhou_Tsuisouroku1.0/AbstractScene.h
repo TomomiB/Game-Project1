@@ -13,12 +13,12 @@ class SceneChangeListener;
 
 class AbstractScene
 {
+protected:
+	SceneChangeListener* SceneChanged;
+
 public:
 	AbstractScene(SceneChangeListener* SceneChangeListener, const SceneParameter& parameter);
 	virtual ~AbstractScene() = default;
 	virtual void update() = 0;
 	virtual void draw() const = 0;
-
-protected:
-	SceneChangeListener* SceneChanged;
 };

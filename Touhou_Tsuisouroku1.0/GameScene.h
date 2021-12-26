@@ -5,7 +5,7 @@
 #include "AbstractStage.h"
 //#include "AbstractConversation.h"
 #include "AbstractPlayer.h"
-//#include "GameBoard.h"
+#include "GameFrame.h"
 //#include "AbstractBackground.h"
 //#include "EnemyManager.h"
 //#include "YakumoRan.h"
@@ -35,7 +35,7 @@ private:
 	//int _level;
 	std::shared_ptr<AbstractPlayer> player;
 	std::shared_ptr<AbstractStage> stage;
-	//std::shared_ptr<GameBoard> _board;
+	std::shared_ptr<GameFrame> board;
 	//std::shared_ptr<AbstractBackground> _background;
 	//std::shared_ptr<EnemyManager> _enemyManager;
 	//std::shared_ptr<AbstractBoss> _boss;
