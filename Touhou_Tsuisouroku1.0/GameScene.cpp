@@ -26,6 +26,7 @@ GameScene::GameScene(SceneChangeListener* listener, const SceneParameter& parame
 void GameScene::update()
 {
 	player->update();
+	stage->update();
 	board->update();
 
 	if (Keyboard::getIns()->getPressingCount(KEY_INPUT_ESCAPE) == 1) {
@@ -37,5 +38,6 @@ void GameScene::update()
 void GameScene::draw() const
 {
 	player->draw();
+	stage->draw();
 	board->draw();
 }
