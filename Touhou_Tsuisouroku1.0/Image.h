@@ -1,0 +1,135 @@
+#pragma once
+#include "Singleton.h"
+#include <vector>
+
+class Image final : public Singleton<Image>
+{
+public:
+	Image();
+	~Image() = default;
+	void load() {}
+	void release();
+
+	/* image for Title and Option*/
+	int const getTitle() { return _title; }
+	int const getTitleMenu() { return _titleMenu; }
+	int const getOptionScene() { return _optionScene; }
+	int const getStageClear() { return _stageClear; }
+	int const getStage1() { return _stage1; }
+	int const getStage1Title() { return _stage1Title; }
+	int const getGameStart() { return _gameStart; }
+	int const getExtraStart() { return _extraStart; }
+	int const getPractice() { return _practice; }
+	int const getQuit() { return _quit; }
+	int const getSelectFlower() { return _selectFlower; }
+	int const getCharacterMenu() { return _characterMenu; }
+	int const getReimuLarge() { return _reimuLarge; }
+	int const getMarisaLarge() { return _marisaLarge; }
+	int const getReimuDescription() { return _reimuDescription; }
+	int const getMarisaDescription() { return _marisaDescription; }
+
+	/* images for game board*/
+	int const getGameBoard() { return _board; }
+	int const getBack01() { return _back01; }
+	int const getBackRan() { return _backRan; }
+
+	/* images player & Enemy icon*/
+	// const int* getPlayer() const { return _player; } old image of Reimu. Delete when game is complete
+	const int* getReimu() const { return _reimu; }
+	const int* getMarisa() const { return _marisa; }
+	const int* getBlueFire() const { return _blueFire; }
+	const int* getGreenFire() const { return _greenFire; }
+	int const getYakumoRan() { return _yakumoRan; }
+
+	/* images player& Enemy normal pic*/
+	int const getReimuNormal() { return _reimuNormal; }
+	int const getReimuAngry() { return _reimuAngry; }
+	int const getReimuSmile() { return _reimuSmile; }
+	int const getReimuCreepy() { return _reimuCreepy; }
+	int const getReimuConfused() { return _reimuConfused; }
+
+	int const getRanNormal() { return _ranNormal; }
+	int const getRanTired() { return _ranTired; }
+	int const getRanCrying() { return _ranCrying; }
+	int const getRanConfident() { return _ranConfident; }
+
+	int const getMarisaHappy() { return _marisaHappy; }
+	int const getMarisaSmile() { return _marisaSmile; }
+	int const getMarisaCreepy() { return _marisaCreepy; }
+
+	/* Decorative images*/
+	int const getHitBox() { return _hitBox; }
+	int const getHealthText() { return _healthText; }
+	int const getPowerText() { return _powerText; }
+	int const getHealth() { return _health; }
+	const int* getNumber() { return _number; }
+	int const getMessagebox() { return _messagebox; }
+	int const getBossHealth() { return _bossHealth; }
+	int const getSpellCardLeft() { return _spellCardLeft; }
+	int const getSpellCardRight() { return _spellCardRight; }
+	const int* getCircle() { return _circle; }
+	int const getLeaf() { return _leaf; }
+
+private:
+	int myLoadGraph(const char*);
+	int myLoadDivGraph(const char* fileName, int numTotalImg, int totalX, int totalY, int width, int height, int* buffer);
+
+	std::vector<int> _images;
+	/* image for Title and Option*/
+	int _title;
+	int _titleMenu;
+	int _optionScene;
+	int _stageClear;
+	int _stage1;
+	int _stage1Title;
+	int _gameStart;
+	int _extraStart;
+	int _practice;
+	int _quit;
+	int _selectFlower;
+	int _characterMenu;
+	int _reimuLarge;
+	int _marisaLarge;
+	int _reimuDescription;
+	int _marisaDescription;
+
+	/* images for game board*/
+	int _board;
+	int _back01;
+	int _backRan;
+
+	/* images player & Enemy icon*/
+	//int _player[6]; // old image of Reimu. Delete when game is complete
+	int _reimu[15];
+	int _marisa[15];
+	int _blueFire[4];
+	int _greenFire[4];
+	int _yakumoRan;
+
+	/* images player& Enemy normal pic*/
+	int _reimuNormal;
+	int _reimuAngry;
+	int _reimuSmile;
+	int _reimuCreepy;
+	int _reimuConfused;
+	int _ranNormal;
+	int _ranTired;
+	int _ranCrying;
+	int _ranConfident;
+	int _marisaHappy;
+	int _marisaSmile;
+	int _marisaCreepy;
+
+	/* Decorative images*/
+	int _hitBox;
+	int _healthText;
+	int _powerText;
+	int _health;
+	int _number[10];
+	int _messagebox;
+	int _bossHealth;
+	int _spellCardLeft;
+	int _spellCardRight;
+	int _circle[4];
+	int _leaf;
+};
